@@ -66,5 +66,28 @@ public class isdreieck {
 		
 		assertFalse(dreieck.istDreieck());
 	}
-	
+	@Test
+	public void testDreieckAandBlessC(){
+		dreieck.setSeite_a(25);
+		dreieck.setSeite_b(Integer.MAX_VALUE);
+		dreieck.setSeite_c(29);
+		
+		assertFalse(dreieck.istDreieck());
+	}
+	@Test
+	public void testDreieckAandClessB(){
+		dreieck.setSeite_a(25);
+		dreieck.setSeite_b(29);
+		dreieck.setSeite_c(Integer.MAX_VALUE);
+		
+		assertFalse(dreieck.istDreieck());
+	}
+	@Test
+	public void testDreieckCandBlessA(){
+		dreieck.setSeite_a(25);
+		dreieck.setSeite_b(Integer.MAX_VALUE);
+		dreieck.setSeite_c(29);
+		
+		assertFalse(dreieck.istDreieck());
+	}
 }
