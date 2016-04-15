@@ -42,6 +42,7 @@ public class isdreieck {
 		
 		assertFalse(dreieck.istDreieck());
 	}
+	//
 	@Test
 	public void testDreieckSeiteAkleiner0(){
 		dreieck.setSeite_a(-1);
@@ -66,28 +67,56 @@ public class isdreieck {
 		
 		assertFalse(dreieck.istDreieck());
 	}
+	//
+
 	@Test
-	public void testDreieckAandBlessC(){
-		dreieck.setSeite_a(25);
+	public void testDreieckAundBgleichC(){
+		dreieck.setSeite_a(2);
+		dreieck.setSeite_b(2);
+		dreieck.setSeite_c(4);
+		
+		assertFalse(dreieck.istDreieck());
+	}
+	@Test
+	public void testDreieckAundcgleichB(){
+		dreieck.setSeite_a(2);
+		dreieck.setSeite_b(4);
+		dreieck.setSeite_c(2);
+		
+		assertFalse(dreieck.istDreieck());
+	}
+	@Test
+	public void testDreieckCundBgleichA(){
+		dreieck.setSeite_a(4);
+		dreieck.setSeite_b(2);
+		dreieck.setSeite_c(2);
+		
+		assertFalse(dreieck.istDreieck());
+	}
+	@Test
+	public void testDreieckCundBungleichA(){
+		dreieck.setSeite_a(5);
+		dreieck.setSeite_b(2);
+		dreieck.setSeite_c(2);
+		
+		assertFalse(dreieck.istDreieck());
+	}
+	@Test
+	public void testDreieckSeiteAundBunter0(){
+		dreieck.setSeite_a(5);
 		dreieck.setSeite_b(Integer.MAX_VALUE);
-		dreieck.setSeite_c(29);
+		dreieck.setSeite_c(2);
 		
 		assertFalse(dreieck.istDreieck());
 	}
+	//
 	@Test
-	public void testDreieckAandClessB(){
-		dreieck.setSeite_a(25);
-		dreieck.setSeite_b(29);
-		dreieck.setSeite_c(Integer.MAX_VALUE);
+	public void testDreieckisDreieck(){
+		dreieck.setSeite_a(1);
+		dreieck.setSeite_b(1);
+		dreieck.setSeite_c(1);
 		
-		assertFalse(dreieck.istDreieck());
+		assertTrue(dreieck.istDreieck());
 	}
-	@Test
-	public void testDreieckCandBlessA(){
-		dreieck.setSeite_a(25);
-		dreieck.setSeite_b(Integer.MAX_VALUE);
-		dreieck.setSeite_c(29);
-		
-		assertFalse(dreieck.istDreieck());
-	}
+	//
 }
